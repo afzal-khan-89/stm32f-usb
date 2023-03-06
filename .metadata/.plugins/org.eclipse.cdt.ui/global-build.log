@@ -1,0 +1,14 @@
+11:12:08 **** Incremental Build of configuration Debug for project usb-learn ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "usb-learn.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\attila\STM32CubeIDE\workspace_1.11.2\usb-learn\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb-learn.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb-learn.elf
+ 
+arm-none-eabi-size   usb-learn.elf 
+arm-none-eabi-objdump -h -S  usb-learn.elf  > "usb-learn.list"
+   text	   data	    bss	    dec	    hex	filename
+  30504	    260	   8884	  39648	   9ae0	usb-learn.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb-learn.list
+ 
